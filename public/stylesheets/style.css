@@ -1,8 +1,29 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgba(75, 124, 77, 0.747);
+  text-align: center;
+  margin: 10px
+
 }
 
 a {
-  color: #00B7FF;
+  color: #eaeec4;
+  text-shadow: 1px 1px rgb(27, 54, 9);
+
+}
+
+label {
+  color: #eaeec4;
+  text-shadow: 1px 1px rgb(27, 54, 9);
+
+}
+
+h1 {
+  color: #eaeec4;
+  text-shadow: 1px 1px rgb(27, 54, 9);
+}
+
+#info {
+  line-height: 2.8;
 }
