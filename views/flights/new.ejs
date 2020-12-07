@@ -3,16 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Add Flight</title>
 </head>
+
+<section id="nav">
+
+<h1><%= title %></h1>    
+
+<a href="/flights">ALL FLIGHTS</a> | 
+<a href="/flights/new">ADD FLIGHT</a>
+</section>
+
+<br>
+<br>
+
+
 <body>
-    <form id="add-flight" action="/new" method="POST">
+    <form id="add-flight" action="/flights" method="POST">
         <label>Airline:</label>
         <input type="text" name="airline">
+
+        <br>
+        <br>
+
+
+
         <label>Airport:</label>
         <input type="text" name="airport">
+
+        <br>
+        <br>
+
+
         <label>Date:</label>
         <input type="date" name="date">
+
+        <br>
+        <br>
+
+
         <input type="submit" value="Add Flight">
 
     </form>

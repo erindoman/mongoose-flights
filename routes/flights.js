@@ -2,6 +2,6 @@ var express = require('express');
 var router = express.Router();
 const flightCtrl = require('../controllers/flights')
 
-router.get('/flights', flightCtrl.new)
+router.get('/new', flightCtrl.new)
 
 module.exports = router;
