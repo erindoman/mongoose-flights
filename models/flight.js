@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-const n = 12
 
 const flightSchema = new Schema ({
     airline: {type: String, enum: ['American', 'Southwest', 'United']}, 

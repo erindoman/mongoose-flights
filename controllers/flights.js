@@ -7,22 +7,24 @@ module.exports = {
 }
 
 function newFlight(req, res) {
-    res.render('flights/new', {title: "Add Flight", err: ""})
+    res.render('flights/new', {title: "New Flight", err: ""})
 }
 
 
 function create(req, res) {
-    req.body.flights = req.body.flights.replace(/\s*,\s*/g, ',');
-      if (req.body.flights) req.body.flights = req.body.flights.split(', ')
-      Flight.create(req.body, function(err, flight) {
-          console.log(flight)
-          res.redirect('/flights')
-      })
+    for (let key in req.body) {
+        if (req.body[key] === '') delete req.body[key]
     }
+    const flight = new Flight(req.body)
+    flight.save(function(err) {
+    if (err){ return res.redirect('/flights/new')} 
+    res.redirect(`/flights/${flight._id}`)
+  })
+}
 
 function index(req, res) {
     Flight.find({}, function(err, flights) {
-        res.render('flights/index', {flights})
+        res.render('flights/index', {title: "All Flights", flights})
     })
 }
 

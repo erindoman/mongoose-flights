@@ -2,12 +2,12 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/flights', function(req, res, next) {
+router.get('/', function(req, res, next) {
   res.render('index', { title: 'Mongoose Flights Lab' });
 });
 
-router.get('/', function(req, res, next) {
-  res.redirect('/flights')
-})
+// router.get('/', function(req, res, next) {
+//   res.redirect('/flights')
+// })
 
 module.exports = router;
