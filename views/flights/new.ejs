@@ -8,6 +8,8 @@
 </head>
 
 <section id="nav">
+ <h1><%= title %></h1>    
+
 
 <a href="/flights">ALL FLIGHTS</a> | 
 <a href="/flights/new">ADD FLIGHT</a>
@@ -18,32 +20,39 @@
 
 
 <body>
-    <form id="new-form" action="/flights" method="POST">
-        <label>Airline:</label>
-        <input type="text" name="airline">
+    <section id="info">
+        <label for="airline">Choose an Airline:</label>
+          <select name="airports" id="airports">
+            <option value=“american”>American</option>
+            <option value=“southwest”>Southwest</option>
+            <option value=“united”>United</option>
+          </select>
+    
+        <br>
+    
+        <label for="airports">Choose an Airport:</label>
+          <select name="airports" id="airports">
+            <option value=“AUS”>AUS</option>
+            <option value=“DFW”>DFW</option>
+            <option value=“DEN” selected>DEN</option>
+            <option value=“LAX”>LAX</option>
+            <option value=“SAN”>SAN</option>
+          </select>
+    
+        <br>
+        <label for="flightNo">Flight Number:</label>
+        <input type="number" name="flightNo">
 
         <br>
-        <br>
 
-
-
-        <label>Airport:</label>
-        <input type="text" name="airport">
-
-        <br>
-        <br>
-
-
-        <label>Date:</label>
-        <input type="date" name="date">
-
-        <br>
-        <br>
-
+        <label for="date">Date:</label>
+        <input type="datetime-local" id="date" name="date"
+          value=""
+          min="2020-01-01" max="3000-01-01">
+          
+        </section>
 
         <input type="submit" value="Add Flight">
-
-    </form>
     
 </body>
 </html>

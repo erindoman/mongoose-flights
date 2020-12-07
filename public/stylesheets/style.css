@@ -2,6 +2,9 @@ body {
   font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: rgba(75, 124, 77, 0.747);
   text-align: center;
+  color: #eaeec4;
+  text-shadow: 1px 1px rgb(27, 54, 9);
+
 }
 
 #nav {

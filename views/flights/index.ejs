@@ -11,9 +11,7 @@
 <table id="list">
     <thead>
         <tr>
-            <th>Airline</th>
-            <th>Airplane</th>
-            <th>Date</th>
+            <th>Flights</th>
             <th></th>
         </tr>
     </thead>
@@ -22,6 +20,7 @@
             <tr>
                 <td><%= f.airline %> </td>
                 <td><%= f.airplane %> </td>
+                <td><%= f.flightNo  %> </td>
                 <td><%= f.date %> </td>
                 <td><a href="/flights/<%= f._id %>">DETAILS</a></td>
             </tr>

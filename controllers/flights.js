@@ -2,7 +2,8 @@ const Flight = require('../models/flight')
 
 module.exports = {
     new: newFlight,
-    create
+    create, 
+    index
 }
 
 function newFlight(req, res) {
@@ -11,20 +12,17 @@ function newFlight(req, res) {
 
 
 function create(req, res) {
-    const flight = new Flight(req.body)
-    flight.save(function(err) {
-        if (err) {
-            console.log(err)
-            return res.render('flights/new', (err))
-        }
-        console.log(flight)
-        res.redirect(`/flights/${flight._id}`)
-    })
-}
+    req.body.flights = req.body.flights.replace(/\s*,\s*/g, ',');
+      if (req.body.flights) req.body.flights = req.body.flights.split(', ')
+      Flight.create(req.body, function(err, flight) {
+          console.log(flight)
+          res.redirect('/flights')
+      })
+    }
 
 function index(req, res) {
     Flight.find({}, function(err, flights) {
-        res.render('flights/index', {title: "All Flights", flights})
+        res.render('flights/index', {flights})
     })
 }
 
