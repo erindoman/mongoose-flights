@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: false })); //takes form data and puts it 
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/flights', indexRouter);
+app.use('/', indexRouter);
 app.use('/flights', flightsRouter);
 
 // catch 404 and forward to error handler
