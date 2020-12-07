@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+    <div>Airline:</div>
+    <div><%= flight.airline %></div>
+    <div>Airport:</div>
+    <div><%= flight.airport %></div>
+    <div>Flight Number:</div>
+    <div><%= flight.flightNo %></div>
+    <div>Departs:</div>
+    <div><%= flight.departs %></div>
+    <div>Destination: </div><br>
+      <%- flight.destinations.map(d => 
+        `${d.destination}`
+      ) %>
+    <form id="add-destination-to-airport" action="/flights/<%= flight._id %>/destinations" method="POST">
+      <select name="destination">
+        <%- destinations.map(d => 
+          `<option value="${d._id}">${d.destination}</option>`
+       ) %>
+      </select>
+      <button type="submit">Add Destination</button>
+    </form><br>
+</section>
+</form>

@@ -12,16 +12,13 @@
 
 
 <a href="/flights">ALL FLIGHTS</a> | 
-<a href="/flights/new">ADD FLIGHT</a>
+<a href="/flights/new">ADD FLIGHT</a> | 
+<a href="/flights/destinations">ADD DESTINATIONS</a>
+
 </section>
-
-<br>
-<br>
-
-
 <body>
 
-<form action="/flights" method="POST"></form>
+<form action="/flights" method="POST">
     <label for="airline">Choose an Airline:</label>
         <select name="airports" id="airports">
             <option value=“american”>American</option>
@@ -43,7 +40,7 @@
     <br>
     
     <label for="flightNo">Flight Number:</label>
-    <input type="number" name="flightNo">
+    <input type="string" name="flightNo">
 
     <br>
 
@@ -53,6 +50,7 @@
     </section>
 
     <input type="submit" value="Add Flight">
-    
+ </form>
+   
 </body>
 </html>
