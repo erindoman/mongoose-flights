@@ -6,7 +6,8 @@ module.exports = {
     create, 
     index,
     show, 
-    delete: deleteFlight
+    delete: deleteFlight,
+    addToDestinations
 }
 
 function newFlight(req, res) {
@@ -48,3 +49,11 @@ function deleteFlight(req, res) {
     })
 }
 
+function addToDestinations(req, res){
+    Flight.findById(req.params.id, function(err, flight) {
+        flight.destination.push(req.body.destination);
+        flight.save(function(err) {
+          res.redirect(`/flights/${flight._id}`);
+        });
+      });
+}
