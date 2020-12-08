@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheets/style.css">
-    <title>Flight Index</title>
-</head>
-<body>
-
+<%- include('../partials/header') %>
 <table id="list">
     <thead>
         <tr>
@@ -17,8 +8,6 @@
             <th>Departs</th>
             <th>Details</th>
             <th>Delete</th>
-
-            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -28,9 +17,9 @@
                 <td><%= f.airport %> </td>
                 <td><%= f.flightNo  %> </td>
                 <td><%= f.departs %> </td>
-                <td><a href="/flights/<%= f._id %>">DETAILS</a></td>
+                <td><a href="/<%= f._id %>">DETAILS</a></td>
                 <td>
-                <form action="/flights/<%= f._id %>?_method=DELETE" method="POST">
+                <form action="/<%= f._id %>?_method=DELETE" method="POST">
                 <button>X</button>
                 </form>
                 </td>
@@ -38,7 +27,4 @@
         <% }) %> 
     </tbody>
 </table>
-
-    
-</body>
-</html>
+<%- include('../partials/footer') %>

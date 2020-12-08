@@ -24,11 +24,12 @@
 </section>
 </form>
 
-br><br><h2>Tickets</h2>
+<br><h2>Tickets</h2>
 <form id="add-ticket-form" method="POST"
   action="/flights/<%= flight._id %>/tickets">
   <label>Seat:</label>
   <input name="seat" required pattern="[A-F][1-9]\d?" oninput="this.value = this.value.toUpperCase()" placeholder="A1 - F99" maxlength="3">
+  <br>
   <label>Price:</label>
   <input type="text" name='price' placeholder="$...">
   <input type="submit" value="Add Ticket" class='submitBtn'>
@@ -62,4 +63,4 @@ br><br><h2>Tickets</h2>
     <h5>No Tickets Yet</h5>
   <% } %>
 
-  <%- include('./partials/footer') %>
+  <%- include('../partials/footer') %>

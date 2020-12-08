@@ -11,7 +11,7 @@ module.exports = {
 }
 
 function newFlight(req, res) {
-    res.render('flights/new', {title: "New Flight", err: ""}) //titles for partials
+    res.render('flights/new', {title: "Add Flight", err: ""}) //titles for partials
 }
 
 function create(req, res) {

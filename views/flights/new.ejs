@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <title>Add Flight</title>
-</head>
-
-<section id="nav">
- <h1><%= title %></h1>    
-
-
-<a href="/flights">ALL FLIGHTS</a> | 
-<a href="/flights/new">ADD FLIGHT</a> | 
-<a href="/flights/destinations">ADD DESTINATIONS</a>
-
-</section>
+<%- include('../partials/header') %>
 <body>
 
 <form action="/flights" method="POST">
@@ -53,4 +36,4 @@
  </form>
    
 </body>
-</html>
+<%- include('../partials/footer') %>
