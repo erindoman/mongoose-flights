@@ -1,31 +1,28 @@
 <%- include('../partials/header') %>
 
-    <select>
-        <% destinations.forEach(function(d) { %>
-            <%= destinations %> 
-            <option><%= d.destination %></option>
-        <% }) %>
-    </select>
-    </p>
-        <form id="add-destination-form" action="/destinations" method="POST">
-            <label>Destination:</label>
-            <input type="text" name="destination" oninput="this.value = this.value.toUpperCase()" maxlength="3">
-            <input type="submit" value="Add Destination" class='AD'>
-        </form>
-            <h4>Destinations:</h4>
-                <% destinations.forEach(function(d) { %>
-                    <%= d.destination %> 
-                    <br>
-                    <form action="/destinations/<%= d._id %>" class='link'><input type="submit" value="See Details">
-                    <br>
-                    <form action="/destinations/<%= d._id%>?_method=DELETE" class='delete-form' method="POST"><input type="submit" value="Delete">
+<select>
+    <% destinations.forEach(function(d) { %>
+        <%= destinations %> 
+        <option><%= d.destination %></option>
+    <% }) %>
+</select>
 
-                        <br>
-                        <p>------</p>
-                        
-                        </form>
-                    
-             <% }) %>
+<form id="add-destination-form" action="/destinations" method="POST">
+    <label>Destination:</label>
+    <input type="text" name="destination" oninput="this.value = this.value.toUpperCase()" maxlength="3">
+    <input type="submit" value="Add Destination" class='AD'>
+</form>
 
+<h4>Destinations:</h4>
+<% destinations.forEach(function(d) { %>
+    <%= d.destination %> 
+    <br>
+    <form action="/destinations/<%= d._id %>" class='link'><input type="submit" value="See Details">
+        <br>
+    <form action="/destinations/<%= d._id%>?_method=DELETE" class='delete-form' method="POST"><input type="submit" value="Delete">
+        <br>
+        <p>------</p>
+    </form>
+<% }) %>
 
 <%- include('../partials/footer') %>

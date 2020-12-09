@@ -15,11 +15,15 @@ function newFlight(req, res) {
 }
 
 function create(req, res) {
+    for (let key in req.body) {
+        if (req.body[key] === '') delete req.body[key]
+    }
     const flight = new Flight(req.body)
     flight.save(function(err) {
-    if (err){ return res.redirect('/flights/new')} 
-    res.redirect(`/flights/${flight._id}`)
-    console.log(flight)
+    if (err){ 
+        return res.redirect('/flights/new')
+    } 
+    res.redirect(`/flights/new/${flight._id}`)
   })
 }
 
@@ -41,7 +45,7 @@ function show(req, res){
 
 function deleteFlight(req, res) {
     Flight.findByIdAndDelete(req.params.id, function(err, flight) {
-        res.redirect(`/flights/`)
+        res.redirect(`/flights`)
     })
 }
 

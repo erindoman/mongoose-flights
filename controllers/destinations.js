@@ -4,7 +4,7 @@ module.exports = {
     new: newDestination,
     create,
     show, 
-    deleteDestination
+    deleteDestination,
 }
 
 function newDestination(req, res) {
