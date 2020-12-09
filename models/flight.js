@@ -10,7 +10,7 @@ const ticketSchema = new Schema({
 
 const flightSchema = new Schema ({
     airline: {type: String, enum: ['American', 'Southwest', 'United']}, 
-    airport: {type: String, enum: ['AUS', 'DEN', 'DFW', 'LAX', 'SAN'], default: 'DEN'},
+    airport: {type: String, enum: ['AUS', 'DEN', 'DFW', 'LAX', 'SAN']},
     flightNo: {type: Number, require: true, min: 10, max: 9999},
     departs: {type: Date, default:() => Date.now() + 365*24*60*60*1000},
     destinations: [{type: Schema.Types.ObjectId, ref: 'Destinations'}],

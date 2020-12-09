@@ -6,7 +6,7 @@
             <th>Flight Number</th>
             <th>Departs</th>
             <th>Details</th>
-            <th>Delete</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -17,12 +17,12 @@
                 <td><%= f.departs %> </td>
                 <td><a href="/flights/<%= f._id %>">DETAILS</a></td>
                 <td>
-                <form action="/flights/<%= f._id %>?_method=DELETE" method="POST">
-                <button>Delete</button>
-                </form>
+                    <form action="/flights/<%= f._id %>?_method=DELETE" method="POST">
+                        <button>Delete</button>
+                    </form>
                 </td>
             </tr>
-        <% }) %> 
-    </tbody>
-</table>
-<%- include('../partials/footer') %>
+            <% }) %> 
+        </tbody>
+    </table>  
+    <%- include('../partials/footer') %>

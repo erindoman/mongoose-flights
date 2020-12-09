@@ -1,12 +1,5 @@
 <%- include('../partials/header') %>
 
-<select>
-    <% destinations.forEach(function(d) { %>
-        <%= destinations %> 
-        <option><%= d.destination %></option>
-    <% }) %>
-</select>
-
 <form id="add-destination-form" action="/destinations" method="POST">
     <label>Destination:</label>
     <input type="text" name="destination" oninput="this.value = this.value.toUpperCase()" maxlength="3">
@@ -18,8 +11,13 @@
     <%= d.destination %> 
     <br>
     <form action="/destinations/<%= d._id %>" class='link'><input type="submit" value="See Details">
-        <br>
-    <form action="/destinations/<%= d._id%>?_method=DELETE" class='delete-form' method="POST"><input type="submit" value="Delete">
+    </form>
+
+    <br>
+
+    <form action="/destinations/<%= d._id%>?_method=DELETE" class='delete-form' method="POST">
+    
+            <input type="submit" value="Delete">
         <br>
         <p>------</p>
     </form>

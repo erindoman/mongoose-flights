@@ -42,3 +42,11 @@ input {
 select {
   background-color: #eaeec4;
 }
+
+button {
+  background-color: #eaeec4;
+}
+
+#list {
+  text-align: center;
+}
