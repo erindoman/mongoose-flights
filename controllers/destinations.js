@@ -1,6 +1,4 @@
-const { models } = require('mongoose')
 const Destination = require('../models/destination')
-const Flight = require('../models/flight')
 
 module.exports = {
     new: newDestination,
@@ -11,7 +9,7 @@ module.exports = {
 
 function newDestination(req, res) {
     Destination.find({}, function(err, destinations) {
-        res.render('destinations/new', { title: 'Add Destination', destinations})
+        res.render('destinations/new', { title: 'Add Destination', destinations })
     })
 }
 
@@ -23,7 +21,7 @@ function create(req, res) {
 
 function show(req, res) {
     Destination.findById(req.params.id, function(err, destination){
-        res.render('destinations/show', {title: 'Destination Detail', destination})
+        res.render('destinations/show', { title: 'Destination Detail', destination })
     })
 }
 

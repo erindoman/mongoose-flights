@@ -1,34 +1,31 @@
 <%- include('../partials/header') %>
 
-<body>
-    <p>Please first ensure that the Destination is not in the dropdown:
-        <select>
-            <% destinations.forEach(function(d) { %>
-                <%= destinations %> 
-                <option><%= d.destination %></option>
-          <% }) %>
-        </select>
+    <select>
+        <% destinations.forEach(function(d) { %>
+            <%= destinations %> 
+            <option><%= d.destination %></option>
+        <% }) %>
+    </select>
     </p>
-      <form id="add-destination-form" action="/destinations" method="POST">
-        <label>Destination:</label>
-        <input type="text" name="destination" oninput="this.value = this.value.toUpperCase()" maxlength="3">
-        <input type="submit" value="Add Destination" class='AD'>
-      </form>
-      <tbody>
-              <h4>Destinations:</h4>
-            <% destinations.forEach(function(d) { %>
-            <tr>
-                <td><%= d.destination %><br></td>
-                <td><a href="/destinations/<%= d._id %>"  class='link'>DETAILS</a></td>
-                <td>
-                    <form action="/destinations/<%= d._id%>?_method=DELETE" class='delete-form' method="POST">
-                        <button type='submit'>X</button>
-                    </form>
-                </td>
-            <% }) %>
-          </tr>
-     </tbody>
-    
-</body>
+        <form id="add-destination-form" action="/destinations" method="POST">
+            <label>Destination:</label>
+            <input type="text" name="destination" oninput="this.value = this.value.toUpperCase()" maxlength="3">
+            <input type="submit" value="Add Destination" class='AD'>
+        </form>
+            <h4>Destinations:</h4>
+                <% destinations.forEach(function(d) { %>
+                    <%= d.destination %> 
+                    <br>
+                    <form action="/destinations/<%= d._id %>" class='link'><input type="submit" value="See Details">
+                    <br>
+                    <form action="/destinations/<%= d._id%>?_method=DELETE" class='delete-form' method="POST"><input type="submit" value="Delete">
+
+                        <br>
+                        <p>------</p>
+                        
+                        </form>
+                    
+             <% }) %>
+
 
 <%- include('../partials/footer') %>

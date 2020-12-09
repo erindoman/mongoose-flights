@@ -34,3 +34,11 @@ h1 {
 #info {
   line-height: 2.8;
 }
+
+input {
+  background-color: #eaeec4;
+}
+
+select {
+  background-color: #eaeec4;
+}
