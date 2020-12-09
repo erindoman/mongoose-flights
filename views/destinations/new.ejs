@@ -9,17 +9,20 @@
 <h4>Destinations:</h4>
 <% destinations.forEach(function(d) { %>
     <%= d.destination %> 
+    
     <br>
+    
     <form action="/destinations/<%= d._id %>" class='link'><input type="submit" value="See Details">
     </form>
 
     <br>
 
     <form action="/destinations/<%= d._id%>?_method=DELETE" class='delete-form' method="POST">
+    <input type="submit" value="Delete">
+        
+    <br>
     
-            <input type="submit" value="Delete">
-        <br>
-        <p>------</p>
+    <p>------</p>
     </form>
 <% }) %>
 
